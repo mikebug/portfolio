@@ -23,6 +23,8 @@ const Name = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+}
 `;
 const Letters = styled.span`
   font-size: 12px;
@@ -69,7 +71,7 @@ const M = styled.p`
 const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  flex-start;
   gap: 1rem;
 `;
 
@@ -80,6 +82,13 @@ const Contacts = styled.div`
   font-size: 12px;
   font-weight: 200;
   width: 200px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  max-width: none;
+  a {
+    text-decoration: none;
+    color: var(--text, #ffa75d);
+  }
   color: var(--text, #ffa75d);
   :link {
     color: var(--text, #fff);
@@ -121,7 +130,12 @@ const Contacts = styled.div`
 
 export default function Menu() {
   return (
-    <Header className="container">
+    <Header
+      className="container"
+      style={{
+        padding: "0 1rem",
+      }}
+    >
       <LogoContainer>
         <Logo>
           <M>M</M>
@@ -131,9 +145,27 @@ export default function Menu() {
           <Letters>Software Engineer/Designer</Letters>
         </Name>
         <Contacts>
-          <a href="LinkedIn.com">LinkedIn</a>
-          <a href="GitHub.com">GitHub</a>
-          <a href="Twitter.com">Twitter</a>
+          <a
+            href="https://LinkedIn.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://GitHub.com/mikebug"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://michaelbuglione.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Website
+          </a>
         </Contacts>
       </LogoContainer>
     </Header>

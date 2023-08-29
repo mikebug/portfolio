@@ -34,3 +34,52 @@
     max-width: 1430px;
   }
 }
+
+@keyframes fadeAndMoveUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes easeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  animation: fadeAndMoveUp 4s ease-in-out forwards; /* Use the animation here */
+}
+
+.main-content {
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 1s ease-in-out;
+}
+
+.main-content.loaded {
+  animation: easeIn 1s ease-in-out forwards;
+}
